@@ -1,0 +1,75 @@
+﻿<Page x:Class="AppUserPanel.Pages.SignInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AppUserPanel.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"  Name="page"
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="SignInPage">
+
+
+
+    <Grid Height="550" Width="1000">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/pb.jpg"/>
+        </Grid.Background>
+        
+        
+        <Grid Height="450" Width="800" >
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="DarkCyan" Offset="0"/>
+                <GradientStop Color="Transparent" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Button HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="20,20,0,0"
+                Background="Transparent"
+                Command="{Binding BackCommand}"
+                 CommandParameter="{Binding ElementName=page}">
+            <materialDesign:PackIcon Kind="ArrowLeft" />
+        </Button>
+
+  
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" Width="350">
+            <TextBlock Text="Sign In" FontSize="28" FontWeight="Bold" Margin="0,0,0,20" 
+                       HorizontalAlignment="Center" 
+                       Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+            <TextBox x:Name="UsernameTextBox"
+                     Width="300"
+                     materialDesign:HintAssist.Hint="UserName"
+                    Text="{Binding TextName,UpdateSourceTrigger=PropertyChanged}"
+                     Margin="0,10,0,0"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     HorizontalAlignment="Center" />
+
+           
+           
+            <PasswordBox
+                           x:Name="PasswordBox"
+                           materialDesign:HintAssist.Hint="Password"
+                           materialDesign:TextFieldAssist.HasClearButton="True"
+                           materialDesign:HintAssist.HelperText="At least 4 characters"
+                           local:PasswordBoxHelper.BoundPassword="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="49" Width="297"
+                         >
+
+            </PasswordBox>
+
+            <Button Content="Sign In" 
+                    Width="300" 
+                    Height="40" 
+                    Margin="0,20,0,0" 
+                    Style="{StaticResource MaterialDesignFlatAccentBgButton}" 
+                    Background="{DynamicResource PrimaryHueMidBrush}" 
+                    Foreground="White"
+                    Command="{Binding SignInCommand}" CommandParameter="{Binding ElementName=page}" />
+        </StackPanel>
+    </Grid>
+    </Grid>
+</Page>

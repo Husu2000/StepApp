@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\2s.png" />
+    <None Remove="Images\Bakı Bizə Miami.jpg" />
+    <None Remove="Images\exitt.png" />
+    <None Remove="Images\marketicon.png" />
+    <None Remove="Images\pb.jpg" />
+    <None Remove="Images\shopping_cart.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\2s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Bakı Bizə Miami.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\exitt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\marketicon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pb.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\shopping_cart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="font-awesome" Version="4.7.0" />
+		<PackageReference Include="Font.Awesome" Version="5.15.4" />
+		<PackageReference Include="FontAwesome" Version="4.7.0" />
+		<PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+		<PackageReference Include="SimpleInjector" Version="5.4.6" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\AppLibrary\AppLibrary.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="AppLibrary">
+	    <HintPath>..\AppLibrary\bin\Debug\net8.0\AppLibrary.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+	
+</Project>
